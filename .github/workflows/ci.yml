@@ -42,6 +42,9 @@ jobs:
         cd frontend/ConservatorioNewsApp
         npm install
 
+    - name: Update Vercel CLI
+      run: npm install -g vercel@latest
+
     - name: Deploy to Vercel
       run: vercel --prod
       env:
