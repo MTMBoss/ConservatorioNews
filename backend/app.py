@@ -13,7 +13,7 @@ def get_updates():
     soup = BeautifulSoup(response.content, 'html.parser')
 
     news = []
-    for item in soup.select('body > main > div:nth-child(2)'):
+    for item in soup.select('body > main > div:nth-child(2) > div.row.g-0'):
         title = item.get_text()
         news.append({'title': title})
 
