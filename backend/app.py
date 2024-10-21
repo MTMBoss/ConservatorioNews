@@ -1,10 +1,8 @@
 from flask import Flask, jsonify
-from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/updates', methods=['GET'])
 def get_updates():
@@ -19,5 +17,5 @@ def get_updates():
 
     return jsonify(news)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
