@@ -31,7 +31,7 @@ jobs:
       run: |
         cd backend
         python -m unittest discover -s tests
-  
+
     - name: Set up Node
       uses: actions/setup-node@v2
       with:
@@ -42,13 +42,7 @@ jobs:
         cd frontend/ConservatorioNewsApp
         npm install
 
-    - name: Build frontend
-      run: |
-        cd frontend/ConservatorioNewsApp
-        npm run build
-
     - name: Deploy to Vercel
       run: vercel --prod
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
