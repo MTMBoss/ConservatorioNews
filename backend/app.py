@@ -8,12 +8,12 @@ CORS(app)
 
 @app.route('/updates', methods=['GET'])
 def get_updates():
-    url = 'URL_DEL_SITO_DEL_CONSERVATORIO'
+    url = 'https://conts.it/it/'
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
     news = []
-    for item in soup.select('CSS_SELECTOR_PER_LA_NEWS'):
+    for item in soup.select('body > main > div:nth-child(2)'):
         title = item.get_text()
         news.append({'title': title})
 
